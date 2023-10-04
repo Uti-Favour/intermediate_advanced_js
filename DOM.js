@@ -1,5 +1,7 @@
-document.addEventListener('DOMContentLoaded' , function(){
-let title = document.getElementById("title");
-title.classList.toggle("new");
-console.log(title);
-});
+let btn = document.getElementById("btn");
+function displayMsg(){
+    console.log("Button Clicked");
+}
+btn.addEventListener('click' , displayMsg);
+
+btn.removeEventListener('click' , displayMsg);
