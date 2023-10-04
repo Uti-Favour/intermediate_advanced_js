@@ -1,2 +1,5 @@
-let menu = document.getElementById("menu");
-menu.innerHTML = "<h1>Hello</h1>!";
+document.addEventListener('DOMContentLoaded' , function(){
+let inputBox = document.getElementById("username");
+inputBox.removeAttribute("placeholder");
+console.log(inputBox);
+});
