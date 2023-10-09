@@ -90,3 +90,11 @@ getComputedStyle: 6,
 
     //For in loop
 
+let object = {
+    fruits : ["apple" , "banana", "orange" ];
+    name: "Favour",
+    age: 16,
+    isBoy: true
+};
+
+console.log(object);
