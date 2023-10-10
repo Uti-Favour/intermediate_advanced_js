@@ -47,21 +47,87 @@ console.log(sum);
 
 //No 4
 
-function multiplyNumeric(obj){
-    for(let key in obj){
-        if(typeof obj[key] === 'number'){
-            obj[key] *= 2
-        }
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] === "number") {
+      obj[key] *= 2;
     }
-};
+  }
+}
 
 // before the call
 let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
-  };
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
 
 multiplyNumeric(menu);
 
 console.log(menu);
+
+//---------------The End-----------------
+
+//Object references and copying
+let users = {
+  name: "Favour",
+  age: 16,
+};
+
+let clone = {};
+for (let key in users) {
+  clone[key] = users[key];
+}
+
+clone.name = "Uti";
+console.log(clone);
+
+users.age = 18;
+console.log(users);
+
+//Object.assign
+let comfirm = {
+  name: "Favour",
+  age: 16,
+  handsome: true,
+};
+
+firstPermission = {
+  canEdit: true,
+};
+secondPermission = {
+  canView: false,
+};
+
+Object.assign(comfirm, firstPermission, secondPermission);
+
+console.log(comfirm);
+
+//Instead we can use for more advanced cloning
+let practice = {
+  name: "anonymous",
+  age: 20,
+  class: "ss3",
+  isTall: true,
+};
+
+let clonePractice = Object.assign({}, practice);
+console.log(clonePractice);
+
+//Structured Cloning
+let spread = {
+  name: "pete",
+  height: "1inch",
+  size: {
+    width: 100,
+    height: 50,
+  },
+};
+
+let cloneSpread = structuredClone(spread);
+
+console.log(cloneSpread);
+console.log(spread);
+
+spread.size.height = 100;
+
