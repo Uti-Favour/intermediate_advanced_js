@@ -131,3 +131,33 @@ console.log(spread);
 
 spread.size.height = 100;
 
+//Gabage collection in Arrays & Object
+let ach = {
+  name: "john",
+};
+console.log(ach);
+
+ach = null;
+
+console.log(ach);
+
+//Example
+function marry(man, woman) {
+  woman.husband = man;
+  man.wife = woman;
+  return {
+    father: man,
+    mother: woman,
+  };
+}
+let family = marry(
+  {
+    name: "John",
+  },
+  {
+    name: "Ann",
+  }
+);
+
+delete family.father;
+delete family.mother.husband;
