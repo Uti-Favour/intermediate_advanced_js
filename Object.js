@@ -109,7 +109,7 @@ let calculator = {
 
   read() {
     //this.a = +prompt("a?", 0);
-   // this.b = +prompt("b?", 0);
+    // this.b = +prompt("b?", 0);
   },
 };
 
@@ -119,7 +119,7 @@ console.log(calculator.mul());
 
 //Chain Object Project
 //let ladder = {
-  //  step: 0,
+//  step: 0,
 //     up() {
 //       this.step++;
 //       return this
@@ -134,13 +134,56 @@ console.log(calculator.mul());
 //     }
 //   };
 
-  //ladder.up().up().down().showStep().down().showStep();
+//ladder.up().up().down().showStep().down().showStep();
 
-
-
-
-
-
-
-  //Constructor, operator "new"
+//Constructor, operator "new"
+function Who(version) {
+    this.name = version;
+    this.isAdmin = false;
+  }
   
+  let who = new Who("Jack");
+  
+  console.log(who.name); // Jack
+  console.log(who.isAdmin); // false
+
+
+  //Calculator Excercise
+//  function Calculators(){
+//     this.read = function(){
+//         this.a = +prompt('a?', 0);
+//         this.b =  +prompt('b?', 0);
+//     },
+
+//     this.sum = function(){
+//         return this.a + this.b;
+//     },
+
+//     this.mul = function(){
+//         return this.a * this.b;
+//     }
+//  }
+
+//  let newCalculator = new Calculators();
+//  newCalculator.read();
+//  console.log("Sum = " + newCalculator.sum());
+//  console.log("Mul = " + newCalculator.mul());
+
+
+
+
+
+
+ //new Accumulator
+function Accumulator(startingValue){
+    this.value = startingValue;
+this.read = function(){
+    this.value += +prompt('What should i add?', 0 );
+};  
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+
+console.log(accumulator.value);
