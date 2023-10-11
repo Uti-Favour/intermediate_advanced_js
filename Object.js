@@ -84,16 +84,54 @@ userArray.intro();
 //The code above will result to undefined error and cannot read property 'name' of undefined
 
 //Here  is the correct version
-function checkUsers(){
-    return{
-        name: "Uti",
-        age: 16,
-        ref(){
-            return this;
-        }
-    };
+function checkUsers() {
+  return {
+    name: "Uti",
+    age: 16,
+    ref() {
+      return this;
+    },
+  };
 }
 
 let whoUse = checkUsers();
 console.log(whoUse.ref().name);
 
+//Creating a calculator
+let calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+
+  mul() {
+    return this.a * this.b;
+  },
+
+  read() {
+    //this.a = +prompt("a?", 0);
+   // this.b = +prompt("b?", 0);
+  },
+};
+
+calculator.read();
+console.log(calculator.sum());
+console.log(calculator.mul());
+
+//Chain Object Project
+let ladder = {
+    step: 0,
+    up() {
+      this.step++;
+      return this
+    },
+    down() {
+      this.step--;
+      return this
+    },
+    showStep: function() { // shows the current step
+      alert( this.step );
+      return this
+    }
+  };
+
+  ladder.up().up().down().showStep().down().showStep();
