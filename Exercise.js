@@ -161,3 +161,7 @@ let family = marry(
 
 delete family.father;
 delete family.mother.husband;
+
+
+
+//this object method in JavaScript
