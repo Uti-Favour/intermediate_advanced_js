@@ -165,3 +165,14 @@ delete family.mother.husband;
 
 
 //this object method in JavaScript
+
+let say = {
+    name : "speak",
+    age: 30,
+};
+
+say.greet = function(){
+    console.log("Hello!");
+}
+
+say.greet();
