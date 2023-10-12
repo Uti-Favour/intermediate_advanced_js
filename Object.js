@@ -246,3 +246,12 @@ console.log(idAgain == id3);
 
 
 //Object to primitive conversion
+obj[Symbol.toPrimitive] = function(hint){
+
+}
+
+let user = {name: "John"};
+
+alert(user); // [object Object]
+alert(user.valueOf() === user); // true
+
