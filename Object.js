@@ -221,3 +221,28 @@ console.log(user2?.[key]); //return undefine
 //deleting object
 // let userr = null;
 // userr?.name = "John"; //returns error
+
+
+//Symbol type object concept
+let id = Symbol('id');
+
+let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+console.log(id1 == id2);
+
+
+console.log(id);//result to an error
+console.log(id.toString()); //it works now 
+console.log(id.description); //shows the property only
+
+//All symbols are defferent even though they have same name
+
+let id3 = Symbol.for('id'); //creates a global symbol if it dont exist
+let idAgain = Symbol.for('id');
+console.log(idAgain == id3);
+
+
+
+
+//Object to primitive conversion
