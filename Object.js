@@ -187,3 +187,37 @@ accumulator.read();
 accumulator.read();
 
 console.log(accumulator.value);
+
+
+//Optional chaing Object concept
+let view = {};
+console.log(view?.address?.street);
+
+let fav = document.querySelector('.check');
+console.log(fav?.innerHTML); //returns undefine
+
+let userAdmin = {
+    admins(){
+        console.log("I am the admin");
+    }
+}
+
+let userGuest = {};
+userAdmin.admins?.();
+userGuest.admins?.();
+
+//reading object property that dont exist
+let key = "firstName";
+let user1 = {
+    firstName: "John"
+};
+
+let user2 = null;
+
+console.log(user1?.[key]); //return john
+console.log(user2?.[key]); //return undefine
+
+
+//deleting object
+// let userr = null;
+// userr?.name = "John"; //returns error
