@@ -54,3 +54,14 @@ let company = { // the same object, compressed for brevity
   console.log(sumSalaries(company)); // 7700
 
   //Rest parameters and spread syntax
+  function sumAll(...args){
+    let sum = 0;
+
+    for(let arg of args) sum += arg;
+
+    return sum;
+  }
+
+  console.log(sumAll(1));
+  console.log(sumAll(1 ,2));
+  console.log(sumAll(1,2 ,3));
