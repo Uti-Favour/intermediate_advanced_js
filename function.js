@@ -52,3 +52,5 @@ let company = { // the same object, compressed for brevity
   }
   
   console.log(sumSalaries(company)); // 7700
+
+  //Rest parameters and spread syntax
