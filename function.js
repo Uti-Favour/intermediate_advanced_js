@@ -101,3 +101,30 @@ function isEven(n){
 console.log(isEven(50));
 console.log(isEven(75));
 console.log(isEven(10));
+
+
+
+//Bean counting
+function countBs(str){
+  return countChar(str , "B")
+};
+
+function countChar(str , char){
+  let count = 0;
+
+  //for loop
+  for(i = 0 ; i < str.length ; i++){
+    if(str[i] === char){
+      count++;
+    }
+  }
+
+  return count;
+}
+
+// Your code here.
+
+console.log(countBs("BBC"));
+// → 2
+console.log(countChar("kakkerlak", "k"));
+// → 4
