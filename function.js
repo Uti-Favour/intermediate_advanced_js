@@ -28,43 +28,76 @@ function pow(x, n) {
 }
 console.log(pow(2, 3));
 
-
 //Reecursive calculation
-let company = { // the same object, compressed for brevity
-    sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 1600 }],
-    development: {
-      sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
-      internals: [{name: 'Jack', salary: 1300}]
-    }
-  };
-  
-  // The function to do the job
-  function sumSalaries(department) {
-    if (Array.isArray(department)) { // case (1)
-      return department.reduce((prev, current) => prev + current.salary, 0); // sum the array
-    } else { // case (2)
-      let sum = 0;
-      for (let subdep of Object.values(department)) {
-        sum += sumSalaries(subdep); // recursively call for subdepartments, sum the results
-      }
-      return sum;
-    }
-  }
-  
-  console.log(sumSalaries(company)); // 7700
+let company = {
+  // the same object, compressed for brevity
+  sales: [
+    { name: "John", salary: 1000 },
+    { name: "Alice", salary: 1600 },
+  ],
+  development: {
+    sites: [
+      { name: "Peter", salary: 2000 },
+      { name: "Alex", salary: 1800 },
+    ],
+    internals: [{ name: "Jack", salary: 1300 }],
+  },
+};
 
-  //Rest parameters and spread syntax
-  function sumAll(...args){
+// The function to do the job
+function sumSalaries(department) {
+  if (Array.isArray(department)) {
+    // case (1)
+    return department.reduce((prev, current) => prev + current.salary, 0); // sum the array
+  } else {
+    // case (2)
     let sum = 0;
-
-    for(let arg of args) sum += arg;
-
+    for (let subdep of Object.values(department)) {
+      sum += sumSalaries(subdep); // recursively call for subdepartments, sum the results
+    }
     return sum;
   }
+}
 
-  console.log(sumAll(1));
-  console.log(sumAll(1 ,2));
-  console.log(sumAll(1,2 ,3));
+console.log(sumSalaries(company)); // 7700
 
-  //Function Excercise
-  
+//Rest parameters and spread syntax
+function sumAll(...args) {
+  let sum = 0;
+
+  for (let arg of args) sum += arg;
+
+  return sum;
+}
+
+console.log(sumAll(1));
+console.log(sumAll(1, 2));
+console.log(sumAll(1, 2, 3));
+
+//Function Excercise
+function maxValue(param1, param2) {
+  if (param1 > param2) {
+    return param2;
+  } else {
+    return param1;
+  }
+}
+
+console.log(maxValue(5, 10));
+
+//Recursion
+function isEven(n){
+  if(n === 0){
+    return true;
+  } else if(n === 1){
+    return false;
+  } else if(n < 0){
+    return isEven(-n);
+  } else{
+    return isEven(n - 2);
+  }
+}
+
+console.log(isEven(50));
+console.log(isEven(75));
+console.log(isEven(10));
