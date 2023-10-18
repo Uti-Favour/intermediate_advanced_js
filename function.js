@@ -65,3 +65,6 @@ let company = { // the same object, compressed for brevity
   console.log(sumAll(1));
   console.log(sumAll(1 ,2));
   console.log(sumAll(1,2 ,3));
+
+  //Function Excercise
+  
