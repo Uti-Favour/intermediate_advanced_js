@@ -130,3 +130,18 @@ console.log(countChar("kakkerlak", "k"));
 // → 4
 
 //Variable scope and closure
+function f() {
+  let value = 123;
+
+  return function() {
+    alert(value);
+  }
+}
+
+let g = f(); // while g function exists, the value stays in memory
+
+g = null; // ...and now the memory is cleaned up
+
+
+
+//Scope and closure excercise
