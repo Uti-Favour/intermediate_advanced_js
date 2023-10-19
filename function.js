@@ -145,3 +145,49 @@ g = null; // ...and now the memory is cleaned up
 
 
 //Scope and closure excercise
+function makeWorker() {
+  let name = "Pete";
+
+  return function() {
+    console.log(name);
+  };
+}
+
+ let name = "John";
+
+// create a function
+let work = makeWorker();
+
+// call it
+work(); // what will it show?
+
+//It will show the name inside the return statement
+
+
+function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+console.log( counter.up() ); // ?
+console.log( counter.up() ); // ?
+console.log( counter.down() ); // ?
+
+
+//sum project
+function sum(a){
+  return function(b){
+  return a + b;
+  };
+}
+
+console.log(sum(1)(2)); // Output: 3
+console.log(sum(5)(-1)); // Output: 4
