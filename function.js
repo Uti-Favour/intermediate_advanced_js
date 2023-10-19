@@ -86,14 +86,14 @@ function maxValue(param1, param2) {
 console.log(maxValue(5, 10));
 
 //Recursion
-function isEven(n){
-  if(n === 0){
+function isEven(n) {
+  if (n === 0) {
     return true;
-  } else if(n === 1){
+  } else if (n === 1) {
     return false;
-  } else if(n < 0){
+  } else if (n < 0) {
     return isEven(-n);
-  } else{
+  } else {
     return isEven(n - 2);
   }
 }
@@ -102,19 +102,17 @@ console.log(isEven(50));
 console.log(isEven(75));
 console.log(isEven(10));
 
-
-
 //Bean counting
-function countBs(str){
-  return countChar(str , "B")
-};
+function countBs(str) {
+  return countChar(str, "B");
+}
 
-function countChar(str , char){
+function countChar(str, char) {
   let count = 0;
 
   //for loop
-  for(i = 0 ; i < str.length ; i++){
-    if(str[i] === char){
+  for (i = 0; i < str.length; i++) {
+    if (str[i] === char) {
       count++;
     }
   }
@@ -133,27 +131,25 @@ console.log(countChar("kakkerlak", "k"));
 function f() {
   let value = 123;
 
-  return function() {
-    alert(value);
-  }
+  return function () {
+    console.log(value);
+  };
 }
 
 let g = f(); // while g function exists, the value stays in memory
 
 g = null; // ...and now the memory is cleaned up
 
-
-
 //Scope and closure excercise
 function makeWorker() {
   let name = "Pete";
 
-  return function() {
+  return function () {
     console.log(name);
   };
 }
 
- let name = "John";
+let name = "John";
 
 // create a function
 let work = makeWorker();
@@ -163,31 +159,49 @@ work(); // what will it show?
 
 //It will show the name inside the return statement
 
-
 function Counter() {
   let count = 0;
 
-  this.up = function() {
+  this.up = function () {
     return ++count;
   };
-  this.down = function() {
+  this.down = function () {
     return --count;
   };
 }
 
 let counter = new Counter();
 
-console.log( counter.up() ); // ?
-console.log( counter.up() ); // ?
-console.log( counter.down() ); // ?
-
+console.log(counter.up()); // ?
+console.log(counter.up()); // ?
+console.log(counter.down()); // ?
 
 //sum project
-function sum(a){
-  return function(b){
-  return a + b;
+function sum(a) {
+  return function (b) {
+    return a + b;
   };
 }
 
 console.log(sum(1)(2)); // Output: 3
 console.log(sum(5)(-1)); // Output: 4
+
+console.log("Hello!");
+
+window.alert("Hello");
+
+//Global Object
+window.globalObject = {
+  name: "Uti Favour",
+};
+
+console.log(window.name);
+
+//or getting it in a safe way
+console.log(window.globalObject.name);
+
+function sayHi(){
+  alert("HelloFavour")
+};
+
+sayHi(sayHi.name);
