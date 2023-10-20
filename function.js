@@ -205,3 +205,6 @@ function sayHi(){
 };
 
 sayHi(sayHi.name);
+
+//new Function
+let funcs = new Function ([arg1, arg2, ...argN], functionBody);
